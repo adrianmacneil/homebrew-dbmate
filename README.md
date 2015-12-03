@@ -1,6 +1,6 @@
 # dbmate homebrew formula
 
 ```sh
-$ brew tap adrianmacneil/dbmate
+$ brew tap amacneil/dbmate
 $ brew install dbmate
 ```
