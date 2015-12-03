@@ -7,6 +7,12 @@ class Dbmate < Formula
 
   head "https://github.com/amacneil/dbmate.git"
 
+  bottle do
+    root_url "https://github.com/amacneil/dbmate/releases/download/v0.1"
+    cellar :any
+    sha256 "44e8da6c940a66bc20fa6f244840833f74abbff0483814356b5bb9615a279060" => :el_capitan
+  end
+
   depends_on "go" => :build
 
   def install
