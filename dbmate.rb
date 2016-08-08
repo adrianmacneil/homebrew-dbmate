@@ -7,7 +7,7 @@ class Dbmate < Formula
   head "https://github.com/amacneil/dbmate.git"
 
   bottle do
-    root_url "https://github.com/amacneil/dbmate/releases/download/v1.0.1"
+    root_url "https://github.com/amacneil/dbmate/releases/download/v1.1.0"
     cellar :any
     sha256 "e2158716ab2b9968e0317b941aef40d5ba493dd02784de550148ce3525f18fe3" => :el_capitan
   end
