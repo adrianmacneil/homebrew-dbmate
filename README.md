@@ -11,6 +11,6 @@ brew install dbmate
 
 ```sh
 brew tap amacneil/dbmate
-cd /usr/local/Library/Taps/amacneil/homebrew-dbmate
+cd $(brew --repository amacneil/dbmate)
 ./bottle.sh
 ```
