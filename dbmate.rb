@@ -1,15 +1,14 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool."
   homepage "https://github.com/amacneil/dbmate"
-  url "https://github.com/amacneil/dbmate/archive/v1.3.0.tar.gz"
-  sha256 "f449fd1529067f9dd8fc9993b51b450c14ea61ed628d7256f7c58bcaed77bf60"
-
   head "https://github.com/amacneil/dbmate.git"
+  url "https://github.com/amacneil/dbmate/archive/v1.4.0.tar.gz"
+  sha256 "a070c016e13182b2d7c2303cb0648201fb18fa168e94a556b89a69c6a321518e"
 
   bottle do
-    root_url "https://github.com/amacneil/dbmate/releases/download/v1.3.0"
-    sha256 "11b21beb647193756b6027f946c124cad231eac50dc247f9bdf06ec66724582c" => :high_sierra
     cellar :any
+    root_url "https://github.com/amacneil/dbmate/releases/download/v1.4.0"
+    sha256 "8ecba4e9a6f779f050df094fe46c7cbad468ca1b2fce78fc932fb947f6a317f5" => :high_sierra
   end
 
   depends_on "go" => :build
@@ -21,7 +20,7 @@ class Dbmate < Formula
 
     cd "src/github.com/amacneil/dbmate" do
       system "dep", "ensure", "-vendor-only"
-      system "go", "build", "-ldflags", "-s", "-o", bin/"dbmate", "./cmd/dbmate"
+      system "go", "build", "-ldflags", "-s", "-o", bin/"dbmate", "."
     end
   end
 
