@@ -1,27 +1,20 @@
 class Dbmate < Formula
-  desc "Lightweight, framework-agnostic database migration tool."
+  desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
+  url "https://github.com/amacneil/dbmate/archive/v1.5.0.tar.gz"
+  sha256 "ec9a19c74ce100094f729dec1877d34097856360c88a4371959a4a5bbb4d6429"
   head "https://github.com/amacneil/dbmate.git"
-  url "https://github.com/amacneil/dbmate/archive/v1.4.1.tar.gz"
-  sha256 "3ffb3909905a90cde16c08ff56cbbebccd71525560a1a1e0909aafbaf145729f"
 
   bottle do
     cellar :any
-    root_url "https://github.com/amacneil/dbmate/releases/download/v1.4.1"
-    sha256 "4dada7f59262e2badaf8abed84856466ffe01b366246160bf788113ea5c52438" => :high_sierra
+    root_url "https://github.com/amacneil/dbmate/releases/download/v1.5.0"
+    sha256 "1822d836d2d75dfec44d41e49d28e6c74f1ab2404b317b0561e20e03a44e881d" => :mojave
   end
 
   depends_on "go" => :build
-  depends_on "dep" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    (buildpath/"src/github.com/amacneil/dbmate").install buildpath.children
-
-    cd "src/github.com/amacneil/dbmate" do
-      system "dep", "ensure", "-vendor-only"
-      system "go", "build", "-ldflags", "-s", "-o", bin/"dbmate", "."
-    end
+    system "go", "build", "-ldflags", "-s", "-o", bin/"dbmate", "."
   end
 
   test do
